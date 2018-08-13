@@ -28,4 +28,4 @@ RUN ln -s /usr/lib/chromium/chromedriver /usr/local/bin/
 
 USER webdriver
 
-CMD ["chromedriver", "--url-base=/wd/hub", "--port=4444", "--whitelisted-ips="]
+CMD ["chromedriver", "--url-base=/wd/hub", "--port=4444", "--proxy-server=79.141.171.13:3128", "--whitelisted-ips="]
