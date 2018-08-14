@@ -23,8 +23,6 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     /var/lib/apt/lists/* \
     /var/tmp/*
 	
-#set proxy
-RUN sed '/^Exec/s/$/ --proxy-server="78.46.244.231:2020"/' /usr/share/applications/chromium-browser.desktop  -i
 
 # Make chromedriver available in the PATH:
 RUN ln -s /usr/lib/chromium/chromedriver /usr/local/bin/
