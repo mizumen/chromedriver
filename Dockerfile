@@ -24,7 +24,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     /var/tmp/*
 	
 #set proxy
-RUN sudo nano /usr/share/applications/chromium-browser.desktop --proxy-server="78.46.244.231:2020" 
+RUN sudo sed '/^Exec/s/$/ --proxy-server="10.0.2.2:3128"/' /usr/share/applications/chromium-browser.desktop  -i
 
 # Make chromedriver available in the PATH:
 RUN ln -s /usr/lib/chromium/chromedriver /usr/local/bin/
