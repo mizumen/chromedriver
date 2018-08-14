@@ -22,10 +22,13 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     /var/cache/* \
     /var/lib/apt/lists/* \
     /var/tmp/*
+	
+#set proxy
+sudo nano /usr/share/applications/chromium-browser.desktop --proxy-server="78.46.244.231:2020" 
 
 # Make chromedriver available in the PATH:
 RUN ln -s /usr/lib/chromium/chromedriver /usr/local/bin/
 
 USER webdriver
 
-CMD ["chromedriver", "--url-base=/wd/hub", "--port=4444", "--proxy-server=79.141.171.13:3128", "--whitelisted-ips="]
+CMD ["chromedriver", "--url-base=/wd/hub", "--port=4444", "--proxy-server=http://78.46.244.231:2020", "--whitelisted-ips="]
