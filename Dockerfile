@@ -6,7 +6,9 @@ FROM blueimp/basedriver
 
 RUN apt-get install wget
 
-RUN apt-get install dpkg
+RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+
+RUN apt-get update
 
 # Make chromedriver available in the PATH:
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
