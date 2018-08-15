@@ -4,11 +4,13 @@
 
 FROM blueimp/basedriver
 
+RUN apt-get update
+
 RUN apt-get install wget
 
 RUN apt-get install fonts-liberation
 
-RUN apt-get -y install libappindicator1 --ignore-missing
+RUN apt-get update && apt-get -y install libappindicator1 --ignore-missing
 
 
 
