@@ -6,7 +6,7 @@ FROM blueimp/basedriver
 
 RUN apt-get install wget
 
-RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+RUN add-apt-repository universe
 
 RUN apt-get update
 
