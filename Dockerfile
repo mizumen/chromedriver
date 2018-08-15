@@ -4,12 +4,14 @@
 
 FROM blueimp/basedriver
 
+# Make chromedriver available in the PATH:
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
 # Install chromedriver (which depends on chromium):
 RUN export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
     chromedriver \
-  && apt-get install google-chrome-stable \
   && apt-get install libosmesa6 \
   # Start chromium via wrapper script with --no-sandbox argument:
   && mv /usr/lib/chromium/chromium /usr/lib/chromium/chromium-original \
