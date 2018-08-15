@@ -4,6 +4,8 @@
 
 FROM blueimp/basedriver
 
+RUN apt-get install wget
+
 # Make chromedriver available in the PATH:
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
