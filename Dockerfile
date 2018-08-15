@@ -8,6 +8,26 @@ RUN apt-get install wget
 
 RUN apt-get install fonts-liberation
 
+RUN apt-get install libappindicator3-1
+
+RUN apt-get install libasound2 
+RUN apt-get install libatk-bridge2.0-0
+RUN apt-get install libatk1.0-0
+RUN apt-get install libcairo2 
+RUN apt-get install libcups2 
+RUN apt-get install libgdk-pixbuf2.0-0
+RUN apt-get install libglib2.0-0
+RUN apt-get install libgtk-3-0
+RUN apt-get install libnspr4 
+RUN apt-get install libnss3 
+RUN apt-get install libpango-1.0-0
+RUN apt-get install libpangocairo-1.0-0
+RUN apt-get install libxcomposite1 
+RUN apt-get install libxcursor1 
+RUN apt-get install lsb-release
+RUN apt-get install xdg-utils
+
+
 RUN apt-get update
 
 # Make chromedriver available in the PATH:
