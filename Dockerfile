@@ -6,14 +6,14 @@ FROM blueimp/basedriver
 
 RUN apt-get install wget
 
-RUN apt-get install Gdebi
-
 RUN apt-get update
 
 # Make chromedriver available in the PATH:
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 RUN dpkg -i google-chrome-stable_current_amd64.deb
+
+RUN apt-get install -f
 
 # Install chromedriver (which depends on chromium):
 RUN export DEBIAN_FRONTEND=noninteractive \
