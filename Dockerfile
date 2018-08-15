@@ -8,7 +8,7 @@ RUN apt-get install wget
 
 RUN apt-get install fonts-liberation
 
-RUN apt-get -y install libappindicator3-1 --ignore-missing
+RUN apt-get -y install libappindicator1 --ignore-missing
 
 
 
