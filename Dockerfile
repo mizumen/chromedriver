@@ -6,7 +6,7 @@ FROM blueimp/basedriver
 
 RUN apt-get install wget
 
-RUN apt-get install -f
+RUN apt-get install Gdebi
 
 RUN apt-get update
 
