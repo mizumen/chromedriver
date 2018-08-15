@@ -6,7 +6,7 @@ FROM blueimp/basedriver
 
 RUN apt-get install wget
 
-RUN add-apt-repository universe
+RUN apt-get install -f
 
 RUN apt-get update
 
