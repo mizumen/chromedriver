@@ -12,7 +12,11 @@ RUN apt-get install fonts-liberation
 
 RUN apt-get update && apt-get -y install libappindicator3-1 --ignore-missing
 
-
+RUN apt-get install libasound2
+RUN apt-get install libnspr4 
+RUN apt-get install libnss3 
+RUN apt-get install lsb-release
+RUN apt-get install xdg-utils
 
 
 RUN apt-get update
