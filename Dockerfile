@@ -4,7 +4,6 @@
 
 FROM blueimp/basedriver
 
-RUN add-apt-repository ppa:ubuntu-x-swat/updates
 RUN add-apt-repository ppa:saiarcot895/chromium-dev
   
 RUN apt-get update
