@@ -4,6 +4,13 @@
 
 FROM blueimp/basedriver
 
+RUN \
+  apt-get update && \
+  apt-get -y install libgl1-mesa-glx libgl1-mesa-dri && \
+  rm -rf /var/lib/apt/lists/*
+  
+  
+
 RUN apt-get update
 
 RUN apt-get install wget
