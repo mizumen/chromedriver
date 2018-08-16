@@ -4,8 +4,8 @@
 
 FROM blueimp/basedriver
 
-RUN apt-get -y install vdpau-va-driver libvdpau1 libvdpau-va-gl1 libva-glx1
-  
+RUN add-apt-repository ppa:ubuntu-x-swat/updates
+RUN add-apt-repository ppa:saiarcot895/chromium-dev
   
 RUN apt-get update
 
