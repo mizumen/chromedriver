@@ -4,38 +4,11 @@
 
 FROM blueimp/basedriver
 
-RUN add-apt-repository ppa:saiarcot895/chromium-dev
-  
-RUN apt-get update
-
-RUN apt-get install wget
-
-RUN apt-get install fonts-liberation
-
-RUN apt-get update && apt-get -y install libappindicator3-1 --ignore-missing
-
-RUN apt-get -y install libasound2
-RUN apt-get -y install libnspr4 
-RUN apt-get -y install libnss3 
-RUN apt-get -y install lsb-release
-RUN apt-get -y install xdg-utils
-
-
-RUN apt-get update
-
-# Make chromedriver available in the PATH:
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-RUN dpkg -i google-chrome-stable_current_amd64.deb 
-
-RUN apt-get install -f
-
 # Install chromedriver (which depends on chromium):
 RUN export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
     chromedriver \
-  && apt-get install libosmesa6 \
   # Start chromium via wrapper script with --no-sandbox argument:
   && mv /usr/lib/chromium/chromium /usr/lib/chromium/chromium-original \
   && printf '%s\n' '#!/bin/sh' \
@@ -49,11 +22,10 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     /var/cache/* \
     /var/lib/apt/lists/* \
     /var/tmp/*
-	
 
 # Make chromedriver available in the PATH:
 RUN ln -s /usr/lib/chromium/chromedriver /usr/local/bin/
 
 USER webdriver
 
-CMD ["chromedriver", "--url-base=/wd/hub", "--enable-webgl-draft-extensions", "--enable-webgl-image-chromium", "--enable-gl-path-rendering", "--port=4444", "--whitelisted-ips="]
+CMD ["chromedriver", "--url-base=/wd/hub", "--port=4444", "--whitelisted-ips="]
