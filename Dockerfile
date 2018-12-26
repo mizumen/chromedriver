@@ -9,7 +9,6 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
     chromedriver \
-  && apt-get install chromium-browser-dbg \
   # Start chromium via wrapper script with --no-sandbox argument:
   && mv /usr/lib/chromium/chromium /usr/lib/chromium/chromium-original \
   && printf '%s\n' '#!/bin/sh' \
